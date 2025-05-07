@@ -5,7 +5,6 @@ window.addEventListener('DOMContentLoaded', init);
 function init() {
   const synth = window.speechSynthesis;
     if (speechSynthesis.onvoiceschanged !== undefined) {
-      console.log("calling_pop_voice")
       synth.onvoiceschanged=populateVoices
     }
     populateVoices()
@@ -46,7 +45,6 @@ function buttonPress(){
     image_element.src = "assets/images/smiling-open.png"
     image_element.alt = "Smiling Open Mouth"
     synth_utt.onend = ()=>{
-      console.log("end")
       image_element.src = "assets/images/smiling.png"
       image_element.alt = "Smiling Mouth"
     }
