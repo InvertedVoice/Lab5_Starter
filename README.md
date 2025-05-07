@@ -1,6 +1,6 @@
 # Lab 5 - Starter
 
-## Members for the lab: <br>
+## Members for the lab
 - George Minasyan 
 - Ali Farahbakhsh 
 
