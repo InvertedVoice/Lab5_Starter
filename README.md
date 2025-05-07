@@ -4,6 +4,6 @@
 - George Minasyan 
 - Ali Farahbakhsh 
 
-## Expose Section
-[Expose Page](https://invertedvoice.github.io/Lab5_Starter/expose.html)
+## Expose and Explore
+[Expose Page](https://invertedvoice.github.io/Lab5_Starter/expose.html) <br>
 [Explore Page](https://invertedvoice.github.io/Lab5_Starter/explore.html)
