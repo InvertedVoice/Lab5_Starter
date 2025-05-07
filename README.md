@@ -5,4 +5,4 @@
 - Ali Farahbakhsh 
 
 ## Expose Section
-[Expose Page](https://github.com/InvertedVoice/Lab5_Starter/blob/88e43fc987efda6e0ef5167e887fca8100a50bff/expose.html)
+[Expose Page](https://invertedvoice.github.io/Lab5_Starter/expose.html)
