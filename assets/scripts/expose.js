@@ -3,58 +3,57 @@
 window.addEventListener('DOMContentLoaded', init);
 
 function init() {
-  const hornSelect = document.getElementById('horn-select');
-  const image = document.querySelector('#expose img');
-  const audio = document.querySelector('audio');
-  const playButton = document.getElementById('button');
-  const volumeSlider = document.querySelector('volume');
-  const volumeIcon = document.querySelector('#volume-controls img');
+  // Get references to DOM elements
+  let imgSelector = document.getElementById("horn-select");
+  let hornImg = document.querySelector("#expose img");
+  let hornAudio = document.querySelector("audio.hidden");
+  let playButton = document.querySelector("button");
+  let volumeSlider = document.getElementById("volume");
+  let volumeImg = document.querySelector("#volume-controls img");
+  let jsconfetti = new JSConfetti();
 
-  const jsConfetti = new JSConfetti();
-
-  const hornAssets = {
-    'air-horn': {
-      image: 'assets/images/air-horn.svg',
-      audio: 'assets/audio/air-hornSelect.mp3'
-    },
-    'car-horn': {
-      image: 'assets/images/air-horn.svg',
-      audio: 'assets/audio/air-hornSelect.mp3'
-    },
-    'party-horn': {
-      image: 'assets/images/air-horn.svg',
-      audio: 'assets/audio/air-hornSelect.mp3'
-    }
-  };
-
-  hornSelect.addEventListener('change', () => {
-    const selected = hornSelect.value;
-    if (hornAssets[selected]) {
-      image.src = hornAssets[selected].image;
-      audio.src = hornAssets[selected].audio;
+  // Handle horn selection changes
+  imgSelector.addEventListener('change', function () {
+    switch (this.value) {
+      case "air-horn":
+        hornImg.src = "assets/images/air-horn.svg";
+        hornAudio.src = "assets/audio/air-horn.mp3";
+        break;
+      case "car-horn":
+        hornImg.src = "assets/images/car-horn.svg";
+        hornAudio.src = "assets/audio/car-horn.mp3";
+        break;
+      case "party-horn":
+        hornImg.src = "assets/images/party-horn.svg";
+        hornAudio.src = "assets/audio/party-horn.mp3";
+        break;
+      default:
+        hornImg.src = "assets/images/no-image.png";
+        hornAudio.src = "";
     }
   });
 
-  
-  volumeSlider.addEventListener('input', () => {
-    const value = volumeSlider.value;
-    audio.volume = value / 100;
+  // Handle volume slider changes
+  volumeSlider.addEventListener('input', function () {
+    let volume = volumeSlider.value;
+    hornAudio.volume = volume / 100;
 
-    if (value == 0) {
-      volumeIcon.src = 'assets/icons/volume-level-0.svg';
-    } else if (value < 33) {
-      volumeIcon.src = 'assets/icons/volume-level-1.svg';
-    } else if (value < 67) {
-      volumeIcon.src = 'assets/icons/volume-level-2.svg';
+    if (volume == 0) {
+      volumeImg.src = "assets/icons/volume-level-0.svg";
+    } else if (volume < 33) {
+      volumeImg.src = "assets/icons/volume-level-1.svg";
+    } else if (volume < 67) {
+      volumeImg.src = "assets/icons/volume-level-2.svg";
     } else {
-      volumeIcon.src = 'assets/icons/volume-level-3.svg';
+      volumeImg.src = "assets/icons/volume-level-3.svg";
     }
   });
 
-  playButton.addEventListener('click', () => {
-    audio.play();
-    if (hornSelect.value === 'party-horn') {
-      jsConfetti.addConfetti();
+  // Handle play button click
+  playButton.addEventListener('click', function () {
+    hornAudio.play();
+    if (imgSelector.value === "party-horn") {
+      jsconfetti.addConfetti();
     }
   });
 }
