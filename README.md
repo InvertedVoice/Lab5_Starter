@@ -1,6 +1,8 @@
 # Lab 5 - Starter
-Make sure you make a PR to your own repo's main and not the class' repo!! Otherwise you will lose points!!
 
-Members for the lab: <br>
+## Members for the lab: <br>
 - George Minasyan 
 - Ali Farahbakhsh 
+
+## Expose Section
+[Expose Page](https://invertedvoice.github.io/Lab5_Starter/expose.html)
