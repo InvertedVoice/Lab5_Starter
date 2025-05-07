@@ -6,3 +6,4 @@
 
 ## Expose Section
 [Expose Page](https://invertedvoice.github.io/Lab5_Starter/expose.html)
+[Explore Page](https://invertedvoice.github.io/Lab5_Starter/explore.html)
